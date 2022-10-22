@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [ {
+      "source": "/5strands*",
+      "destination": "/strandsindex.html"
+    },
+    {
+      "source": "/5Strands*",
+      "destination": "/strandsindex.html"
+    },
+    {
+      "source": "/5strands/",
+      "destination": "/strandsindex.html"
+    },
+    {
+      "source": "/5Strands/*",
+      "destination": "/strandsindex.html"
+    }
+    ]
+  }
+}

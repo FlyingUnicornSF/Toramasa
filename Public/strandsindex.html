@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5Strands test result</title>
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="font-family: 'Averia Sans Libre', cursive">
+    <div id="left-container" style="width: 45vw; display: inline-block; padding: 0 2em 0 2em;">
+      <form method="post" name="five-strands-form" id="five-strands-form">
+        <div>
+          <label for="filter">Search: </label>
+          <input type="text" name="search-text" id="filter" />
+        </div>
+        <div>
+          <fieldset style="width: 70%">
+            <legend>Filter by Categories:</legend>
+          </fieldset>
+        </div>
+        <div>
+          <fieldset style="width: 70%">
+            <legend>Filter by Levels:</legend>
+            <input type="checkbox" id="level-3" name="level-filter" value="Level 3">
+            <label for="level-3">Level 3</label>
+            <input type="checkbox" id="level-3" name="level-filter" value="Level 2">
+            <label for="level-2">Level 2</label>
+            <input type="checkbox" id="level-3" name="level-filter" value="Level 1">
+            <label for="level-1">Level 1</label>
+            <input type="checkbox" id="level-3" name="level-filter" value="Level 0">
+            <label for="level-0">Level 0</label>
+          </fieldset>
+        </div>
+        <div>
+          <label for="filter">Sort by name: </label>
+          <input type="radio" id="sort-by-name" name="sort-by-name" />
+        </div>
+        <div>
+          <label for="filter">Sort by level (default): </label>
+          <input type="radio" id="sort-by-level" name="sort-by-level" />
+        </div>
+        <div>
+          <input
+            id="reset-button"
+            type="reset"
+            value="Reset"
+            form="five-strands-form"
+          />
+          <input
+            id="submit-button"
+            type="button"
+            value="Submit"
+            form="five-strands-form"
+          />
+        </div>
+      </form>
+
+      <table id="five-strands-test">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>level</th>
+            <th>category</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="right-container" style="width: 40vw; display: inline-block">
+      <form method="post" name="ingredients-form" id="ingredients-form">
+        <div>
+          <label for="story">Ingredients:</label>
+        </div>
+        <div>
+          <textarea
+            id="ingredient-text"
+            name="ingredients"
+            rows="14"
+            cols="70"
+            form="ingredients-form"
+          ></textarea>
+        </div>
+        <div>
+          <input
+            id="ingredient-reset"
+            type="reset"
+            value="Reset"
+            form="ingredients-form"
+          />
+          <input
+            id="ingredient-submit"
+            type="submit"
+            value="Enter"
+            form="ingredients-form"
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+      const url = new URL(window.location.href);
+      const origin = url.origin;
+      const src = origin + '/modules/5Strands.js';
+      const bodyEle = document.querySelector("body");
+      const scriptTag = document.createElement("script");
+      scriptTag.setAttribute("type", "module");
+      scriptTag.setAttribute("src", src);
+      bodyEle.appendChild(scriptTag)
+    </script>
+    <!-- <script type="module" src="https://toramasa-7ffa1.web.app/modules/5Strands.js"></script> -->
+  </body>
+</html>
